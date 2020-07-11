@@ -1,14 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace ResendMail
 {
-    class CheckAndWriteBack
+    class CheckIncomeLetter
     {
         public void LogIn2(IWebDriver driver, WebDriverWait wait, string name2, string pass2, string url2)
         {
@@ -24,7 +21,16 @@ namespace ResendMail
             password.SendKeys(Keys.Return);
 
             IWebElement inboxEmail = wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("ll-sj__normal")));
-            
+            ReadOnlyCollection<IWebElement> webElements = driver.FindElements(By.ClassName("ll-sj__normal"));
+
+            foreach (var webElement in webElements)
+            {
+                if (webElement.Text == "Test Email")
+                {
+                    webElement.Click();
+                }
+                
+            }
 
 
         }

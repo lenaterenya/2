@@ -10,6 +10,7 @@ namespace ResendMail
             driver.Url = url;
 
             IWebElement username = wait.Until(ExpectedConditions.ElementIsVisible(By.Name("login")));
+            username.Clear();
             username.SendKeys(name);
             username.SendKeys(Keys.Return);
 

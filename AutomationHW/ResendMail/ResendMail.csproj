@@ -52,11 +52,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CheckAndWriteBack.cs" />
+    <Compile Include="CheckFinalMail.cs" />
+    <Compile Include="CheckIncomeLetter.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="NewMailChecker.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseEmail.cs" />
     <Compile Include="WriteNewMail.cs" />
   </ItemGroup>
   <ItemGroup>
